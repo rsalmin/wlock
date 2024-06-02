@@ -8,7 +8,7 @@ PKG_CONFIG = pkg-config
 
 PKGS       = wayland-client xkbcommon
 WLCPPFLAGS = -DVERSION=\"$(VERSION)\"
-WLCFLAGS   = `$(PKG_CONFIG) --cflags $(PKGS)` $(WLCPPFLAGS) $(CFLAGS)
+WLCFLAGS   = `$(PKG_CONFIG) --cflags $(PKGS)` $(WLCPPFLAGS) $(CFLAGS) -lcrypt
 LDLIBS     = `$(PKG_CONFIG) --libs $(PKGS)`
 
 SRC = wlock.c single-pixel-buffer-v1-protocol.c ext-session-lock-v1-protocol.c viewporter-protocol.c
