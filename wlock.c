@@ -208,10 +208,13 @@ keyboard_keypress(enum wl_keyboard_key_state key_state,
 	case XKB_KEY_BackSpace:
 		if (pw.len)
 			pw.input[--pw.len] = '\0';
+		if (pw.len == 0)
+			input_state = INIT;
 		break;
 	case XKB_KEY_Escape:
 		explicit_bzero(&pw.input, sizeof(pw.input));
 		pw.len = 0;
+		input_state = INIT;
 		break;
 	default:
 		input_state = INPUT;
@@ -294,7 +297,7 @@ seat_capabilities(void *data, struct wl_seat *wl_seat,
 
 	seat->kb = calloc(1, sizeof(Keyboard));
 	seat->kb->keyboard = wl_seat_get_keyboard(seat->seat);
-	
+
 	wl_keyboard_add_listener(seat->kb->keyboard, &keyboard_listener, seat);
 }
 
