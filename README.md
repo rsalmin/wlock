@@ -1,3 +1,6 @@
+
+ **See https://codeberg.org/sewn/wlock for original wlock repo.**
+
 # wlock
 
 wlock is a itsy-bitsy sessionlocker for Wayland compositors that support
@@ -31,7 +34,7 @@ Run `wlock`, to get out of it, enter your password.
 
 See the wlock usage (`wlock -h`) for more details.
 
-See [swayidle](https://github.com/swaywm/swayidle) or 
+See [swayidle](https://github.com/swaywm/swayidle) or
 [widle](https://codeberg.org/sewn/widle) to use wlock
 as a screen locker for a Wayland desktop.
 
